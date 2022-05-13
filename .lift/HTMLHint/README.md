@@ -1,139 +1,41 @@
-<h1 align="center">
-  <br>
-  <a href="https://htmlhint.com"><img src="https://raw.githubusercontent.com/htmlhint/HTMLHint/master/website/static/img/htmlhint.png" alt="Logo HTMLHint" width="170"></a>
-  <br>
-  HTMLHint
-  <br>
-</h1>
+# htmllint [![npm version](http://img.shields.io/npm/v/htmllint.svg?style=flat-square)](https://npmjs.org/package/htmllint) [![license](http://img.shields.io/npm/l/htmllint.svg?style=flat-square)](https://npmjs.org/package/htmllint) [![build status](http://img.shields.io/travis/htmllint/htmllint/master.svg?style=flat-square)](https://travis-ci.org/htmllint/htmllint) [![coveralls](http://img.shields.io/coveralls/htmllint/htmllint.svg?style=flat-square)](https://coveralls.io/r/htmllint/htmllint)
 
-<h4 align="center">The static code analysis tool you need for your HTML.</h4>
+[![stories in ready](https://badge.waffle.io/htmllint/htmllint.svg?label=ready&title=Ready)](http://waffle.io/htmllint/htmllint)
+[![dependencies](http://img.shields.io/david/htmllint/htmllint.svg?style=flat-square)](https://david-dm.org/htmllint/htmllint)
+[![devDependencies](http://img.shields.io/david/dev/htmllint/htmllint.svg?style=flat-square)](https://david-dm.org/htmllint/htmllint)
 
-<p align="center">
-  <a href="https://travis-ci.org/htmlhint/HTMLHint">
-    <img src="https://img.shields.io/travis/htmlhint/HTMLHint.svg" alt="Travis Build Status">
-  </a>
-  <a href="https://codecov.io/gh/htmlhint/HTMLHint">
-    <img src="https://codecov.io/gh/htmlhint/HTMLHint/branch/master/graph/badge.svg" alt="Codecov">
-  </a>
-  <a href="https://www.npmjs.com/package/htmlhint">
-    <img src="https://img.shields.io/npm/dm/htmlhint.svg" alt="NPM count">
-  </a>
-  <img src="https://badgen.net/badge/license/MIT/green" alt="MIT License" />
-  <a href="https://discord.gg/nJ6J9CP">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Chat">
-  </a>
-</p>
+> An unofficial html5 linter and validator.
 
-<p align="center">
-  <a href="#-installation-and-usage">How To Use</a> • <a href="#contributing">Contributing</a> • <a href="https://htmlhint.com">Website</a>
-</p>
+htmllint uses a parser to get the DOM for your html. It then uses the provided rules (and default rules) to lint both the DOM and then individual lines. [Take a look at the supported options](https://github.com/htmllint/htmllint/wiki/Options).
 
-## Table of Contents
+Using htmllint
+--------------
+If you'd like to run htmllint, we have a few options.
 
-- **[Installation and Usage](#-installation-and-usage)**
-  - **[Local Installation and Usage](#local-installation-and-usage)**
-  - **[Global Installation and Usage](#global-installation-and-usage)**
-- **[Example output](#-example-output)**
-- **[Configuration](#-configuration)**
-- **[Docs](#-docs)**
+This module doesn't provide any interface on its own. It is highly recommended that
+you use one of the following modules to run the linter:
+* [`gulp-htmllint`](https://github.com/yvanavermaet/gulp-htmllint): a gulp interface for htmllint
+* [`grunt-htmllint`](https://github.com/htmllint/grunt-htmllint): a grunt plugin for htmllint
+* [`htmllint-cli`](https://github.com/htmllint/htmllint-cli): a cli interface for htmllint (NOTE: not complete at the moment)
 
-## 📟 Installation and Usage
+Getting Started with Contributing
+---------------
 
-Prerequisites: Node.js (>=6.14), npm version 3+.
-
-There are two ways to install HTMLHint: globally and locally.
-
-### Local Installation and Usage
-
-In case you want to include HTMLHint as part of your project, you can install it locally using NPM:
-
+You can use htmllint in Node.JS by using   
 ```
-$ npm install htmlhint --save-dev
+require('htmllint')  
 ```
-
-After that, You can run HTMLHint on any file or directory like this:
-
+in your code, and doing an install with  
 ```
-$ ./node_modules/.bin/htmlhint www/index.html
-$ ./node_modules/.bin/htmlhint www/**/*.html
+npm install htmllint
 ```
+(Remember `--save-dev` if this is just for your development).  
 
-### Global Installation and Usage
+### Now What?
 
-If you want to make HTMLHint available to tools that run across all of your projects, you can install HTMLHint globally using NPM:
+To learn more about the options and usage of htmllint, check out the
+[user manual](https://github.com/htmllint/htmllint/wiki/htmllint-manual).
+  
 
-```
-$ npm install htmlhint -g
-```
 
-After that, you can run HTMLHint on any file like this:
-
-```
-$ htmlhint www/index.html
-$ htmlhint www/**/*.html
-```
-
-You can even launch HTMLHint to analyse an URL:
-
-```
-$ htmlhint https://htmlhint.com/
-```
-
-## 📃 Example output
-
-## 🔧 Configuration
-
-Search `.htmlhintrc` file in current directory and all parent directories:
-
-```
-$ htmlhint
-$ htmlhint test.html
-```
-
-Custom config file:
-
-```
-$ htmlhint --config htmlhint.conf test.html
-```
-
-Custom rules:
-
-```
-$ htmlhint --rules tag-pair,id-class-value=underline index.html
-```
-
-Inline rules in `test.html`:
-
-```
-<!--htmlhint tag-pair,id-class-value:underline -->
-<html>
-<head>
-...
-```
-
-## 📙 Docs
-
-1. [How to use](https://htmlhint.com/docs/user-guide/usage/cli)
-2. [All Rules](https://htmlhint.com/docs/user-guide/list-rules)
-3. [How to Develop](CONTRIBUTING.md)
-
-## © License
-
-[MIT License](./LICENSE.md)
-
-## 💪🏻 Contributors
-
-This project exists thanks to all these people. [Contribute](CONTRIBUTING.md).
-<a href="https://github.com/htmlhint/HTMLHint/graphs/contributors"><img src="https://opencollective.com/htmlhint/contributors.svg?width=890" /></a>
-
-## 🏅 Backers
-
-Thank you to all our backers! [Become a backer](https://opencollective.com/htmlhint#backer).
-
-<a href="https://opencollective.com/htmlhint#backers" target="_blank"><img src="https://opencollective.com/htmlhint/backers.svg?width=890"></a>
-
-## 🎖 Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [Become a sponsor](https://opencollective.com/htmlhint#sponsor).
-
-<a href="https://opencollective.com/htmlhint/sponsor/0/website" target="_blank"><img src="https://opencollective.com/htmlhint/sponsor/0/avatar.svg"></a>
+[![npm](https://nodei.co/npm/htmllint.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/package/htmllint)
